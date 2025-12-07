@@ -28,6 +28,14 @@ class RAGService:
         # HARD KEYWORD RULES
         # -----------------------
 
+        # -----------------------------------
+        # GREETINGS HANDLER
+        # -----------------------------------
+        greetings = ["hello", "hi", "hey", "namaste", "good morning", "good evening"]
+        if any(g in q for g in greetings):
+            return "Hello! How can I assist you today regarding Dr. Pooja’s Rehab & Therapy Clinic?"
+
+
         # Address
         if "address" in q or "location" in q or "where" in q:
             for line in self.knowledge:
